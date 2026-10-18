@@ -1,5 +1,5 @@
 const DM=document.createElement('div'),$=s=>document.querySelector(s)||DM,$$=s=>[...document.querySelectorAll(s)],M=(a,f)=>a.map(f).join('');
-const CFG={email:'info@fiveacresng.com',phone:'',endpoint:'https://formsubmit.co/ajax/fadelemichael2@gmail.com'};
+const CFG={email:'info@fiveacresng.com',phone:'',endpoint:'https://formsubmit.co/ajax/info@fiveacresng.com'};
 const card2=(a)=>M(a,(x,i)=>`<div class="cd rv" style="--d:${(i%4)*.07}s"><h3>${x[0]}</h3><p>${x[1]}</p></div>`);
 $('#vals').innerHTML=card2([['Integrity','Honesty, transparency and accountability in every deal.'],['Quality','Quality standards maintained from sourcing through delivery.'],['Reliability','A dependable partner that buyers and suppliers can trust.'],['Professionalism','Structured systems, documentation, market intelligence and disciplined execution.'],['Transparency','Clear commercial relationships with farmers, agents, suppliers, buyers and financial partners.'],['Partnership','Mutually beneficial relationships rather than short-term transactions.'],['Innovation','Technology, data and better processes to make sourcing more efficient and transparent.'],['Sustainability','Responsible production, environmental protection and the welfare of farming communities.']]);
 /* sourcing tabs */
