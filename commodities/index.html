@@ -78,6 +78,98 @@
             }
         </style>
     </noscript>
+    <style id="rg-css">
+        .rg-panel {
+            margin-top: 1.4rem
+        }
+
+        .rg-panel[hidden] {
+            display: none
+        }
+
+        a.ch {
+            text-decoration: none;
+            transition: background .25s
+        }
+
+        a.ch:hover {
+            background: rgba(255, 255, 255, .3)
+        }
+
+        .rg-matrix {
+            margin-top: 2.6rem
+        }
+
+        .rg-matrix h3 {
+            font-size: 1.15rem;
+            margin-bottom: .8rem
+        }
+
+        .rg-scroll {
+            overflow-x: auto;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--card)
+        }
+
+        .rg-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px
+        }
+
+        .rg-matrix th,
+        .rg-matrix td {
+            padding: .9rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--line);
+            font-size: .92rem
+        }
+
+        .rg-matrix thead th {
+            background: var(--bg2);
+            color: var(--ink);
+            font-weight: 700;
+            white-space: nowrap
+        }
+
+        .rg-matrix tbody th {
+            text-align: left;
+            font-weight: 700
+        }
+
+        .rg-matrix tbody th a {
+            color: var(--ink);
+            text-decoration: none
+        }
+
+        .rg-matrix tbody th a:hover {
+            color: var(--ac)
+        }
+
+        .rg-matrix tbody tr:last-child th,
+        .rg-matrix tbody tr:last-child td {
+            border-bottom: 0
+        }
+
+        .rg-matrix tbody tr:hover {
+            background: var(--bg2)
+        }
+
+        .rg-dot {
+            display: inline-block;
+            width: .95rem;
+            height: .95rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--g6), var(--g9));
+            box-shadow: 0 0 0 4px var(--bg2)
+        }
+
+        .rg-no {
+            color: var(--mut);
+            opacity: .6
+        }
+    </style>
 </head>
 
 <body>
@@ -131,17 +223,23 @@
                 <div class="dd"><a class="top" href="../about">About</a>
                     <div class="sub"><a href="../about">Company profile</a><a href="../management">Management</a></div>
                 </div>
-                 <div class="dd"><a class="top" href="../commodities" data-p="/commodities,/technology">Services</a>
-                    <div class="sub"><a href="../commodities">Commodities</a><a href="../technology">Technology</a></div>
+                <div class="dd"><a class="top" href="../commodities" data-p="/commodities,/technology">Services</a>
+                    <div class="sub"><a href="../commodities">Commodities</a><a href="../technology">Technology</a>
+                    </div>
                 </div>
                 <a class="cta" href="../contact">Contact us</a>
             </nav>
+        </div>
+
+        <div class="mkt" id="mkt" role="region" aria-label="Market prices and exchange rates">
+            <a class="mkt-l" href="../contact"><b>Markets</b><span>Cashew and sesame: ask for today's price</span></a>
+            <div class="mkt-v" id="mktv"></div>
         </div>
     </header>
     <main id="main">
         <div class="page on">
 
-            <header class="ph" style="--a:#0a2c20;--m:#3f4a2a;--b:#c9902c">
+            <header class="ph" style="--bg-img:url('../assets/img/hero-cocoa.jpg')">
                 <div class="w">
                     <h1>Cocoa, cashew, soybeans and sesame</h1>
                     <p>Four strategic commodities, sourced across Nigeria.</p>
@@ -151,34 +249,37 @@
                 <div class="w">
                     <div class="g" id="cm-all">
                         <article class="cd cm rv" style="--x:#123a2a;--y:#3f7a4f;--d:0s">
-                            <div class="ic"><img src="../assets/img/cocoa.jpg" alt="Ripe cocoa pods" loading="lazy"></div>
+                            <div class="ic"><img src="../assets/img/cocoa.jpg" alt="Ripe cocoa pods" loading="lazy">
+                            </div>
                             <div class="bd2">
-                                <h3>Cocoa</h3>
-                                <p style="margin-bottom:1rem">Sourced from the South-West and South-East. Bean count is
-                                    recorded as part of every quality assessment.</p><span
-                                    class="tg">South-West</span><!--<span class="tg">South-East</span>-->
+                                <h3><a href="/commodities/cocoa">Cocoa</a></h3>
+                                <p style="margin-bottom:1rem">Sourced from the South-West. Bean count is recorded as
+                                    part of every quality assessment.</p><span class="tg">South-West</span><a
+                                    class="more" href="/commodities/cocoa">Learn more</a>
                             </div>
                         </article>
                         <article class="cd cm rv" style="--x:#1f3b57;--y:#5d8aa8;--d:0.08s">
-                            <div class="ic"><img src="../assets/img/cashew.jpg" alt="Cashew nuts in a bowl" loading="lazy">
+                            <div class="ic"><img src="../assets/img/cashew.jpg" alt="Cashew nuts in a bowl"
+                                    loading="lazy">
                             </div>
                             <div class="bd2">
-                                <h3>Cashew nuts</h3>
+                                <h3><a href="cashew/">Cashew nuts</a></h3>
                                 <p style="margin-bottom:1rem">Sourced across the South-West, South-East and
                                     North-Central regions, with storage practices that preserve quality.</p><span
                                     class="tg">South-West</span><span class="tg">South-East</span><span
-                                    class="tg">North-Central</span>
+                                    class="tg">North-Central</span><a class="more" href="cashew/">Learn more</a>
                             </div>
                         </article>
                         <article class="cd cm rv" style="--x:#cdb98a;--y:#ecdfba;--d:0.16s">
-                            <div class="ic"><img src="../assets/img/soybeans.jpg" alt="Soybeans in a sack" loading="lazy">
+                            <div class="ic"><img src="../assets/img/soybeans.jpg" alt="Soybeans in a sack"
+                                    loading="lazy">
                             </div>
                             <div class="bd2">
-                                <h3>Soybeans</h3>
+                                <h3><a href="soybeans/">Soybeans</a></h3>
                                 <p style="margin-bottom:1rem">Sourced from the North-Central, North-West and North-East,
                                     with moisture monitored through storage and transport.</p><span
                                     class="tg">North-Central</span><span class="tg">North-West</span><span
-                                    class="tg">North-East</span>
+                                    class="tg">North-East</span><a class="more" href="soybeans/">Learn more</a>
                             </div>
                         </article>
                         <article class="cd cm rv" style="--x:#3b2a1c;--y:#7a5a36;--d:0.24s">
@@ -453,32 +554,116 @@
                                         stroke-width=".3"></path>
                                 </svg></div>
                             <div class="bd2">
-                                <h3>Sesame seeds</h3>
+                                <h3><a href="sesame/">Sesame seeds</a></h3>
                                 <p style="margin-bottom:1rem">Sourced from the North-Central, North-West and North-East,
                                     with foreign matter kept to a minimum.</p><span class="tg">North-Central</span><span
-                                    class="tg">North-West</span><span class="tg">North-East</span>
+                                    class="tg">North-West</span><span class="tg">North-East</span><a class="more"
+                                    href="/commodities/sesame">Learn more</a>
                             </div>
                         </article>
                     </div>
                 </div>
             </section>
-            <section class="s alt">
+            <section class="s alt" id="where">
                 <div class="w">
                     <div class="sh rv">
                         <h2>Where we source</h2>
                         <p>We build supplier relationships in every major commodity-producing region. Choose a region to
                             see its focus commodities.</p>
                     </div>
-                    <div class="tb rv" role="tablist" id="tabs"><button role="tab" aria-selected="true"
-                            data-i="0">South-West</button><button role="tab" aria-selected="false"
-                            data-i="1">South-East</button><button role="tab" aria-selected="false"
-                            data-i="2">North-Central</button><button role="tab" aria-selected="false"
-                            data-i="3">North-West</button><button role="tab" aria-selected="false"
-                            data-i="4">North-East</button></div>
-                    <div class="pn" id="pn" role="tabpanel" style="--k: #2f7a4d;">
-                        <h3>South-West</h3>
-                        <div><span class="ch">Cocoa</span><span class="ch">Cashew</span></div>
-                        <p>We are building supplier relationships across the South-West region.</p>
+                    <div data-rg>
+                        <div class="tb rv" role="tablist" aria-label="Sourcing regions"><button type="button" role="tab"
+                                id="rgt-0" aria-controls="rgp-0" aria-selected="true"
+                                tabindex="0">South-West</button><button type="button" role="tab" id="rgt-1"
+                                aria-controls="rgp-1" aria-selected="false" tabindex="-1">South-East</button><button
+                                type="button" role="tab" id="rgt-2" aria-controls="rgp-2" aria-selected="false"
+                                tabindex="-1">North-Central / Middle Belt</button><button type="button" role="tab"
+                                id="rgt-3" aria-controls="rgp-3" aria-selected="false"
+                                tabindex="-1">North-West</button><button type="button" role="tab" id="rgt-4"
+                                aria-controls="rgp-4" aria-selected="false" tabindex="-1">North-East</button></div>
+                        <div class="pn rg-panel" id="rgp-0" role="tabpanel" aria-labelledby="rgt-0">
+                            <h3>South-West</h3>
+                            <div><a class="ch" href="cocoa/">Cocoa</a><a class="ch" href="cashew/">Cashew</a></div>
+                            <p>Potential sourcing relationships will be developed across states such as Ondo, Osun,
+                                Ekiti, Oyo and surrounding production areas.</p>
+                        </div>
+                        <div class="pn rg-panel" id="rgp-1" role="tabpanel" aria-labelledby="rgt-1" hidden>
+                            <h3>South-East</h3>
+                            <div><a class="ch" href="cashew/">Cashew</a></div>
+                            <p>Other agricultural commodities will be added as opportunities arise.</p>
+                        </div>
+                        <div class="pn rg-panel" id="rgp-2" role="tabpanel" aria-labelledby="rgt-2" hidden>
+                            <h3>North-Central / Middle Belt</h3>
+                            <div><a class="ch" href="cashew/">Cashew</a><a class="ch"
+                                    href="soybeans/">Soybeans</a><a class="ch"
+                                    href="sesame/">Sesame</a></div>
+                            <p>Potential sourcing areas include Benue, Nasarawa, Kogi and neighbouring states, along
+                                with other strategic commodities.</p>
+                        </div>
+                        <div class="pn rg-panel" id="rgp-3" role="tabpanel" aria-labelledby="rgt-3" hidden>
+                            <h3>North-West</h3>
+                            <div><a class="ch" href="sesame/">Sesame</a><a class="ch"
+                                    href="soybeans/">Soybeans</a></div>
+                            <p>Potential sourcing areas include Kano, Jigawa, Kaduna and neighbouring states, along with
+                                other oilseeds and grains.</p>
+                        </div>
+                        <div class="pn rg-panel" id="rgp-4" role="tabpanel" aria-labelledby="rgt-4" hidden>
+                            <h3>North-East</h3>
+                            <div><a class="ch" href="soybeans/">Soybeans</a><a class="ch"
+                                    href="sesame/">Sesame</a></div>
+                            <p>Other suitable agricultural commodities will be added as opportunities arise.</p>
+                        </div>
+                    </div>
+                    <div class="rg-matrix rv">
+                        <h3>Commodities by region</h3>
+                        <div class="rg-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Commodity</th>
+                                        <th scope="col">South-West</th>
+                                        <th scope="col">South-East</th>
+                                        <th scope="col">North-Central</th>
+                                        <th scope="col">North-West</th>
+                                        <th scope="col">North-East</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><a href="cocoa/">Cocoa</a></th>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><a href="cashew/">Cashew nuts</a></th>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><a href="soybeans/">Soybeans</a></th>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><a href="sesame/">Sesame seeds</a></th>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-no" role="img" aria-label="Not sourced">–</span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                        <td><span class="rg-dot" role="img" aria-label="Sourced"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -500,7 +685,7 @@
                     <address style="font-style:normal">
                         <p><b style="color:#fff">Head office</b><br>C18 Yomade Shopping Complex,<br>KM 38 Lekki-Epe
                             Expressway,<br>Awoyaya, Ibeju-Lekki, Lagos State</p>
-                        
+
                         <p><a href="mailto:info@fiveacresng.com">info@fiveacresng.com</a></p>
                     </address>
                 </div>
@@ -509,6 +694,32 @@
         </div>
     </footer>
     <script src="../assets/app.js" defer></script>
+    <script>
+        document.querySelectorAll('[data-rg]').forEach(function (g) {
+            var tabs = [].slice.call(g.querySelectorAll('[role=tab]')),
+                panels = [].slice.call(g.querySelectorAll('[role=tabpanel]'));
+
+            function sel(i, f) {
+                tabs.forEach(function (t, j) {
+                    t.setAttribute('aria-selected', j === i);
+                    t.tabIndex = j === i ? 0 : -1
+                });
+                panels.forEach(function (p, j) {
+                    p.hidden = j !== i
+                });
+                if (f) tabs[i].focus()
+            }
+            tabs.forEach(function (t, i) {
+                t.addEventListener('click', function () {
+                    sel(i)
+                });
+                t.addEventListener('keydown', function (e) {
+                    if (e.key === 'ArrowRight') sel((i + 1) % tabs.length, 1);
+                    if (e.key === 'ArrowLeft') sel((i - 1 + tabs.length) % tabs.length, 1)
+                })
+            });
+        });
+    </script>
 </body>
 
 </html>

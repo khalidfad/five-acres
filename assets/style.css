@@ -1798,3 +1798,15 @@ body .mg-hero[style*="--bg-img"]{background:linear-gradient(90deg,rgba(36,38,42,
 .st .ci{position:absolute;top:1.3rem;right:1.3rem;width:3.4rem;height:3.4rem;display:grid;place-items:center;border-radius:16px;color:var(--ac);background:var(--bg2);border:1px solid var(--line);transition:transform .35s,background-color .35s,color .35s}
 .st .ci svg{width:1.8rem;height:1.8rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .st .cd:hover .ci{transform:rotate(-8deg) scale(1.08);background:var(--ac);color:var(--card)}
+
+
+/* ===== v5: commodity links and guide pages ===== */
+.cm{position:relative}.cm h3 a{color:inherit;text-decoration:none}.cm h3 a::after{content:"";position:absolute;inset:0;z-index:3}
+.cm .more{display:block;width:max-content;margin-top:.9rem;font-weight:700;font-size:.92rem;color:var(--ac);position:relative;z-index:1}
+.cm .more::after{content:"";display:inline-block;width:.45em;height:.45em;margin-left:.45em;border:solid currentColor;border-width:2px 2px 0 0;transform:rotate(45deg);transition:transform .25s}.cm:hover .more::after{transform:translateX(4px) rotate(45deg)}
+.others{display:grid;gap:.3rem;margin-top:.6rem}.others a{display:flex;align-items:center;gap:.8rem;padding:.55rem .7rem;border-radius:12px;color:var(--ink);text-decoration:none;font-weight:600;transition:background .25s}.others a:hover{background:var(--bg2)}.others img{width:44px;height:44px;border-radius:10px;object-fit:cover;flex:none}
+.note{font-size:.9rem!important;color:var(--mut)}
+.steps{counter-reset:st;display:grid;gap:.9rem;margin:1.2rem 0 1.4rem}
+.steps>div{position:relative;padding:1.1rem 1.2rem 1.1rem 4.1rem;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.steps>div::before{counter-increment:st;content:counter(st);position:absolute;left:1.1rem;top:1.1rem;width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:var(--g8);color:#fff;font-weight:700;font-size:.95rem}
+.steps b{display:block;color:var(--ink);margin-bottom:.1rem}.steps span{color:var(--mut);font-size:.97rem;line-height:1.6}
